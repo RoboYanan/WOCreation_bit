@@ -9,7 +9,8 @@
     "files": [
         "README.md",
         "WOCreationbit.blocks",
-        "WOCreationbit.ts"
+        "WOCreationbit.ts",
+        "_locales/zh/WOCreationbit-strings.json"
     ],
     "testFiles": [
         "test.ts"
