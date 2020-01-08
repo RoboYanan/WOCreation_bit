@@ -1,0 +1,20 @@
+{
+    "name": "WOCreationbit",
+    "version": "0.0.0",
+    "description": "WOCreationbit IO Expansion Board drive for Microbit",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "README.md",
+        "WOCreationbit.blocks",
+        "WOCreationbit.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "preferredEditor": "blocksprj",
+    "license": "MIT"
+}
