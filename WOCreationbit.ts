@@ -998,6 +998,9 @@ namespace OLED {
     //% trig.fieldOptions.tooltips="false" trig.fieldOptions.width="300"
     //% echo.fieldEditor="gridpicker" echo.fieldOptions.columns=4
     //% echo.fieldOptions.tooltips="false" echo.fieldOptions.width="300"
+    //% weight=74
+	//% color=160
+	//% group=Sensor传感器
     export function sensor_ping(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
         // send pulse
         pins.setPull(trig, PinPullMode.PullNone);
@@ -1055,6 +1058,9 @@ namespace OLED {
     //% blockId=get_DHT11_value block="DHT11 set pin %pin_arg|get %dhtResult" blockExternalInputs=true
     //% pin_arg.fieldEditor="gridpicker" pin_arg.fieldOptions.columns=4
     //% pin_arg.fieldOptions.tooltips="false" pin_arg.fieldOptions.width="300"
+    //% weight=74
+	//% color=160
+	//% group=Sensor传感器
     export function get_DHT11_value(pin_arg: DigitalPin, dhtResult: Dht11Result): number {
         switch (dhtResult) {
             case Dht11Result.Celsius: return (dht11_read(pin_arg) & 0x0000ff00) >> 8;
@@ -1074,6 +1080,9 @@ namespace OLED {
     //% GreenPin.fieldOptions.tooltips="false" GreenPin.fieldOptions.width="300"
     //% BluePin.fieldEditor="gridpicker" BluePin.fieldOptions.columns=4
     //% BluePin.fieldOptions.tooltips="false" BluePin.fieldOptions.width="300"
+    //% weight=74
+	//% color=160
+	//% group=Sensor传感器
     export function RGBLight(myType: LEDType, RedPin: AnalogPin, GreenPin: AnalogPin, BluePin: AnalogPin, RedValue: number, GreenValue: number, BlueValue: number): void {
         pins.analogWritePin(RedPin, pins.map((myType == LEDType.cathode ? RedValue : (255 - RedValue)), 0, 255, 0, 1023));
         pins.analogWritePin(GreenPin, pins.map((myType == LEDType.cathode ? GreenValue : (255 - GreenValue)), 0, 255, 0, 1023));
