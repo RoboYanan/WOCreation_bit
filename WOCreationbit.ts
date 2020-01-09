@@ -8,7 +8,7 @@
  * @date  2019.12.12
  */
 
-export enum Dht11Result {
+enum Dht11Result {
     //% block="Celsius"
     Celsius,
     //% block="Fahrenheit"
@@ -18,7 +18,7 @@ export enum Dht11Result {
 }
 
 
-export enum LEDType {
+enum LEDType {
     //% block="cathode"
     cathode,
     //% block="anode"
