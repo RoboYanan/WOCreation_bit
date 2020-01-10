@@ -1325,7 +1325,15 @@ namespace OLED {
                 this.setPixelW(pixeloffset >> 0, white >> 0);
             }
         }
+        ws2812b() {
 
+            //% shim=sendBufferAsm
+             function sendBuffer(buf: Buffer, pin: DigitalPin) {
+        }
+            
+        }
+
+        
         /** 
          * Send all the changes to the strip.
          */
@@ -1333,8 +1341,11 @@ namespace OLED {
         //% weight=79
         //% parts="neopixel"
         show() {
+            //% shim=sendBufferAsm
             ws2812b.sendBuffer(this.buf, this.pin);
         }
+
+
 
         /**
          * Turn off all LEDs.

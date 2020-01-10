@@ -10,7 +10,8 @@
         "README.md",
         "WOCreationbit.blocks",
         "WOCreationbit.ts",
-        "_locales/zh/WOCreationbit-strings.json"
+        "_locales/zh/WOCreationbit-strings.json",
+		"sendBuffer.asm"
 
     ],
     "testFiles": [
