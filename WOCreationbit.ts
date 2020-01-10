@@ -1394,9 +1394,6 @@ namespace OLED {
         }
 
 	 clamp(x: number, min: number, max: number): number {
-		if (min > max) {
-			throw new RangeError('`min` should be lower than `max`');
-		}
 
 		if (x < min) {
 			return min;
