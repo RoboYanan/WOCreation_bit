@@ -11,7 +11,7 @@
         "WOCreationbit.blocks",
         "WOCreationbit.ts",
         "_locales/zh/WOCreationbit-strings.json"
-		"sendBuffer.asm"
+
     ],
     "testFiles": [
         "test.ts"
