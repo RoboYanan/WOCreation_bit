@@ -68,6 +68,26 @@ namespace Math {
         return y;
     }
 
+    
+	
+	export function clamp(x, min, max) {
+		if (min > max) {
+			throw new RangeError('`min` should be lower than `max`');
+		}
+
+		if (x < min) {
+			return min;
+		}
+
+		if (x > max) {
+			return max;
+		}
+
+		return x;
+	};
+
+
+
     /**
      * Returns the cosine of an input angle. This is an 8-bit approximation. 
      * @param theta input angle from 0-255

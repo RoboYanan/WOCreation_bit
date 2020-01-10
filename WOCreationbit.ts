@@ -1393,6 +1393,24 @@ namespace OLED {
             }
         }
 
+	 clamp(x: number, min: number, max: number): number {
+		if (min > max) {
+			throw new RangeError('`min` should be lower than `max`');
+		}
+
+		if (x < min) {
+			return min;
+		}
+
+		if (x > max) {
+			return max;
+		}
+
+		return x;
+	    };
+
+
+
         /** 
          * Create a range of LEDs.
          * @param start offset in the LED strip to start the range
@@ -1409,12 +1427,15 @@ namespace OLED {
             strip.buf = this.buf;
             strip.pin = this.pin;
             strip.brightness = this.brightness;
-            strip.start = this.start + Math.clamp(0, this._length - 1, start);
-            strip._length = Math.clamp(0, this._length - (strip.start - this.start), length);
+            strip.start = this.start + this.clamp(0, this._length - 1, start);
+            strip._length = this.clamp(0, this._length - (strip.start - this.start), length);
             strip._matrixWidth = 0;
             strip._mode = this._mode;
             return strip;
         }
+
+
+
 
         /**
          * Shift LEDs forward and clear with zeros.
@@ -1631,8 +1652,8 @@ namespace OLED {
         l = Math.round(l);
         
         h = h % 360;
-        s = Math.clamp(0, 99, s);
-        l = Math.clamp(0, 99, l);
+        s = this.clamp(0, 99, s);
+        l = this.clamp(0, 99, l);
         let c = (((100 - Math.abs(2 * l - 100)) * s) << 8) / 10000; //chroma, [0,255]
         let h1 = h / 60;//[0,6]
         let h2 = (h - h1 * 60) * 256 / 60;//[0,255]
