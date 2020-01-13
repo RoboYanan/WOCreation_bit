@@ -1345,9 +1345,7 @@ namespace OLED {
         show() {
   
             //% shim=sendBufferAsm
-            function sendBuffer(buf: Buffer, pin: DigitalPin) { 
-                
-            }
+            ws2812b.sendBuffer(this.buf, this.pin);
         }
 
 
