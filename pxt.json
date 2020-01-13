@@ -18,6 +18,7 @@
         "Adafruit_GFX_Config.h",
         "glcdfont.h",
         "enums.d.ts",
+		"ws2812b.ts",
         "_locales/zh/WOCreationbit-strings.json",
 		"sendBuffer.asm"
 
